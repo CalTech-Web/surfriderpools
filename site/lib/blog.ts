@@ -9,6 +9,7 @@ export type BlogPost = {
   image: string;
   imageAlt: string;
   paragraphs: string[];
+  resources?: { label: string; url: string; source: string }[];
 };
 
 export const posts: BlogPost[] = [
@@ -30,6 +31,18 @@ export const posts: BlogPost[] = [
       "Expert advice: Our team is always available to provide you with guidance on how to maintain your pool between cleanings. Whether you have questions about water chemistry, equipment maintenance, or anything else related to your pool, we are here to help. We believe that educating our customers is key to maintaining a healthy and beautiful pool.",
       "Comprehensive services: In addition to cleaning, we offer a <a href=\"/services\">full range of pool services</a> to keep your pool in top condition. Our maintenance visits include checking and adjusting water chemistry, cleaning filters, and inspecting equipment for any issues. If your pool needs more than routine care, our experienced team can handle everything from fixing leaks to recovering a green pool. Whatever your pool needs, Surfrider Pool Service has you covered.",
       "In conclusion, Surfrider Pool Service is your go to solution for all your residential swimming pool cleaning, maintenance, and repair needs across Pinellas County. With our expert team and commitment to customer satisfaction, we ensure that your pool remains clean, safe, and enjoyable for you and your family. Whether you are looking for a one time cleaning or a customized maintenance plan, you can <a href=\"/contact\">request a free quote</a> today, or call us at 727.453.1330.",
+    ],
+    resources: [
+      {
+        label: "Healthy Swimming guidance for pool owners",
+        url: "https://www.cdc.gov/healthy-swimming/index.html",
+        source: "CDC",
+      },
+      {
+        label: "What algae is and how it grows",
+        url: "https://en.wikipedia.org/wiki/Algae",
+        source: "Wikipedia",
+      },
     ],
   },
 ];

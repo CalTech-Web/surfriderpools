@@ -80,6 +80,32 @@ export default async function BlogPostPage({
               ))}
             </Prose>
           </div>
+          {post.resources && post.resources.length > 0 && (
+            <div className="mt-12 rounded-2xl border border-aqua-50 bg-aqua-50/50 p-6 md:p-8">
+              <h2 className="font-display text-xl font-bold text-navy-900">Helpful resources</h2>
+              <p className="mt-1 text-sm text-navy-800/75">
+                Trusted, third party references for safe and healthy pool care.
+              </p>
+              <ul className="mt-4 space-y-3">
+                {post.resources.map((r) => (
+                  <li key={r.url}>
+                    <a
+                      href={r.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2 font-semibold text-ocean-600 hover:text-aqua-500"
+                    >
+                      {r.label}
+                      <span className="text-xs font-normal text-navy-800/55">({r.source})</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                        <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="mt-12 border-t border-aqua-50 pt-8">
             <Link href="/blog" className="inline-flex items-center gap-1 font-semibold text-ocean-600">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
