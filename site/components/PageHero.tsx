@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ReactNode } from "react";
 
 export default function PageHero({
@@ -12,6 +13,19 @@ export default function PageHero({
 }) {
   return (
     <section className="relative flex min-h-[400px] items-center overflow-hidden bg-wave">
+      {/* rippling pool water texture */}
+      <Image
+        src="/images/water-hero.jpg"
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover opacity-35 mix-blend-soft-light"
+      />
+      {/* readability gradient over the water */}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-900/55 to-navy-900/30" />
+
       {/* subtle bottom wave divider */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 overflow-hidden" aria-hidden="true">
         <svg viewBox="0 0 1440 32" preserveAspectRatio="none" className="h-full w-full" fill="white" fillOpacity="0.06">
