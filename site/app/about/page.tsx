@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import CTASection from "@/components/CTASection";
@@ -53,9 +54,15 @@ export default function AboutPage() {
             <Heading>Pool care that lets you actually enjoy your pool</Heading>
             <p className="mt-5 text-lg leading-relaxed text-navy-800/85">
               Surfrider Pool Service is a Dunedin based pool company serving homeowners
-              and businesses across Pinellas County and the greater Tampa Bay area. We
-              specialize in pool cleaning, repair, and pressure washing, with a focus
-              on reliability and customer satisfaction.
+              and businesses{" "}
+              <Link href="/service-areas" className="font-semibold text-ocean-600 hover:text-aqua-500">
+                across Pinellas County and the greater Tampa Bay area
+              </Link>
+              . We specialize in{" "}
+              <Link href="/services" className="font-semibold text-ocean-600 hover:text-aqua-500">
+                pool cleaning, repair, and pressure washing
+              </Link>
+              , with a focus on reliability and customer satisfaction.
             </p>
             <p className="mt-4 leading-relaxed text-navy-800/75">
               Our goal is simple. A clean, healthy pool should be effortless for the

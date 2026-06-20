@@ -56,9 +56,13 @@ export default async function BlogPostPage({
 
       <article className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl container-px">
-          <time className="text-sm font-semibold uppercase tracking-wider text-ocean-600">
-            {post.dateLabel}
-          </time>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+            <span className="font-semibold text-ocean-600">By Surfrider Pool Service Team</span>
+            <span className="text-navy-800/40">|</span>
+            <time dateTime={post.date} className="font-semibold uppercase tracking-wider text-navy-800/60">
+              {post.dateLabel}
+            </time>
+          </div>
           <div className="relative mt-5 aspect-[16/9] overflow-hidden rounded-3xl shadow-lg">
             <Image
               src={post.image}
@@ -72,7 +76,7 @@ export default async function BlogPostPage({
           <div className="mt-10">
             <Prose>
               {post.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
+                <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
               ))}
             </Prose>
           </div>

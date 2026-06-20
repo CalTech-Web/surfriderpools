@@ -79,6 +79,13 @@ export default async function ServiceDetailPage({
             <Eyebrow>{service.title}</Eyebrow>
             <Heading>What is included</Heading>
             <p className="mt-5 text-lg leading-relaxed text-navy-800/85">{service.blurb}</p>
+            <p className="mt-4 text-navy-800/75">
+              Available to homeowners and businesses{" "}
+              <Link href="/service-areas" className="font-semibold text-ocean-600 hover:text-aqua-500">
+                throughout Pinellas County and Tampa Bay
+              </Link>
+              .
+            </p>
             <ul className="mt-6 space-y-3">
               {service.features.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-navy-800">

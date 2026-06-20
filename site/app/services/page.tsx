@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
@@ -13,6 +14,12 @@ export const metadata: Metadata = {
   description:
     "Professional pool cleaning, pool repair, and pressure washing across Pinellas County and Tampa Bay. Explore the full range of services from Surfrider Pool Service.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Pool Services in Pinellas County | Surfrider Pool Service",
+    description:
+      "Pool cleaning, repair, and pressure washing for homes and businesses across Pinellas County and Tampa Bay. One local team for everything your pool needs.",
+    url: "/services",
+  },
 };
 
 const crumbs = [
@@ -45,6 +52,21 @@ export default function ServicesPage() {
             <ServiceCard key={s.slug} service={s} />
           ))}
         </div>
+        <p className="mx-auto mt-10 max-w-2xl text-center text-navy-800/80">
+          We serve homeowners across Pinellas County, including{" "}
+          <Link href="/service-areas/dunedin" className="font-semibold text-ocean-600 hover:text-aqua-500">
+            Dunedin
+          </Link>
+          ,{" "}
+          <Link href="/service-areas/clearwater" className="font-semibold text-ocean-600 hover:text-aqua-500">
+            Clearwater
+          </Link>
+          , and{" "}
+          <Link href="/service-areas" className="font-semibold text-ocean-600 hover:text-aqua-500">
+            many more nearby areas
+          </Link>
+          .
+        </p>
       </Section>
 
       <FaqSection items={faqs} eyebrow="Service FAQ" title="Good to know before you book" />

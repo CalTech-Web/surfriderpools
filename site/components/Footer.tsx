@@ -55,6 +55,7 @@ export default function Footer() {
             <li><Link href="/service-areas" className="hover:text-aqua-300">Service Areas</Link></li>
             <li><Link href="/blog" className="hover:text-aqua-300">Blog</Link></li>
             <li><Link href="/contact" className="hover:text-aqua-300">Contact</Link></li>
+            <li><Link href="/sitemap" className="hover:text-aqua-300">Sitemap</Link></li>
             <li><Link href="/privacy-policy" className="hover:text-aqua-300">Privacy Policy</Link></li>
             <li><Link href="/terms-of-service" className="hover:text-aqua-300">Terms of Service</Link></li>
           </ul>

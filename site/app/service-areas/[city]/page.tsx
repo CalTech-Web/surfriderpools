@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import FaqSection from "@/components/FaqSection";
+import PhoneLink from "@/components/PhoneLink";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import { differentiatorIcons } from "@/components/icons";
@@ -49,6 +50,9 @@ export default async function CityPage({
   const { city: citySlug } = await params;
   const city = getCityBySlug(citySlug);
   if (!city) notFound();
+
+  const idx = cities.findIndex((c) => c.slug === city.slug);
+  const nearby = cities[(idx + 1) % cities.length];
 
   const crumbs = [
     { label: "Home", href: "/" },
@@ -100,6 +104,20 @@ export default async function CityPage({
             <Eyebrow>Pool Care in {city.name}</Eyebrow>
             <Heading>Your local pool team in {city.name}</Heading>
             <p className="mt-5 text-lg leading-relaxed text-navy-800/85">{city.introParagraph}</p>
+            <p className="mt-4 leading-relaxed text-navy-800/75">
+              From{" "}
+              <Link href="/services" className="font-semibold text-ocean-600 hover:text-aqua-500">
+                weekly pool cleaning to repairs and pressure washing
+              </Link>
+              , our {city.name} customers get dependable, local care. We also serve nearby{" "}
+              <Link
+                href={`/service-areas/${nearby.slug}`}
+                className="font-semibold text-ocean-600 hover:text-aqua-500"
+              >
+                {nearby.name}
+              </Link>
+              .
+            </p>
 
             {/* neighborhoods chip row */}
             <div className="mt-8">
@@ -124,14 +142,9 @@ export default async function CityPage({
               <p className="mt-1 text-sm leading-relaxed text-navy-800/80">{city.poolCareNote}</p>
             </div>
 
-            <p className="mt-6 text-navy-800/75">
-              Not sure if we reach your street? Call{" "}
-              <a
-                href={site.phoneHref}
-                className="font-semibold text-ocean-600 hover:text-aqua-500 transition-colors"
-              >
-                {site.phone}
-              </a>{" "}
+            <p className="mt-6 inline-flex flex-wrap items-center gap-x-1 text-navy-800/75">
+              Not sure if we reach your street?
+              <PhoneLink className="font-semibold text-ocean-600 hover:text-aqua-500" label={`Call ${site.phone}`} />
               and we will let you know right away.
             </p>
           </div>

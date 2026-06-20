@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileActionBar from "@/components/MobileActionBar";
+import Analytics from "@/components/Analytics";
 import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema, organizationSchema, webSiteSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Surfrider Pool Service",
     description: site.description,
-    images: ["/images/hero-pool.jpg"],
+    images: [{ url: "/opengraph-image", alt: "Surfrider Pool Service" }],
   },
   robots: {
     index: true,
@@ -89,6 +90,7 @@ export default function RootLayout({
         <main className="flex-1 pb-[72px] lg:pb-0">{children}</main>
         <Footer />
         <MobileActionBar />
+        <Analytics />
       </body>
     </html>
   );
