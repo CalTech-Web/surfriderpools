@@ -10,34 +10,24 @@ export default function CTASection({
 }) {
   return (
     <section className="relative overflow-hidden bg-wave">
-      {/* decorative SVG background */}
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        aria-hidden="true"
-        preserveAspectRatio="xMidYMid slice"
-        viewBox="0 0 1200 400"
-        fill="none"
-      >
-        {/* bubbles */}
-        <g fill="#ffffff" opacity="0.07">
-          <circle cx="150" cy="80" r="40" />
-          <circle cx="1050" cy="120" r="64" />
-          <circle cx="980" cy="40" r="22" />
-          <circle cx="280" cy="330" r="30" />
-          <circle cx="640" cy="370" r="48" />
-        </g>
-        {/* flowing waves */}
-        <path
-          d="M0 300 C 200 250, 400 350, 600 300 S 1000 250, 1200 300 V400 H0 Z"
+      {/* decorative animated pool waves */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <svg
+          className="absolute inset-0 h-full w-full"
+          preserveAspectRatio="xMidYMid slice"
+          viewBox="0 0 1200 400"
           fill="#ffffff"
           opacity="0.06"
-        />
-        <path
-          d="M0 340 C 250 300, 450 390, 700 340 S 1050 300, 1200 345 V400 H0 Z"
-          fill="#07172b"
-          opacity="0.18"
-        />
-      </svg>
+        >
+          <circle cx="150" cy="80" r="40" />
+          <circle cx="1050" cy="110" r="64" />
+          <circle cx="980" cy="40" r="22" />
+          <circle cx="280" cy="60" r="26" />
+        </svg>
+        <WaveLayer color="#ffffff" opacity={0.08} duration="18s" heightClass="h-24 md:h-36" />
+        <WaveLayer color="#22cce4" opacity={0.16} duration="12s" reverse heightClass="h-20 md:h-28" />
+        <WaveLayer color="#07172b" opacity={0.32} duration="9s" heightClass="h-14 md:h-20" />
+      </div>
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 container-px py-16 text-center md:py-20">
         <h2 className="max-w-2xl text-3xl text-white md:text-4xl text-balance">{title}</h2>
@@ -58,5 +48,45 @@ export default function CTASection({
         </div>
       </div>
     </section>
+  );
+}
+
+const WAVE_PATH =
+  "M0,40 C240,90 480,90 720,40 C960,-10 1200,-10 1440,40 L1440,120 L0,120 Z";
+
+function WaveLayer({
+  color,
+  opacity,
+  duration,
+  reverse = false,
+  heightClass,
+}: {
+  color: string;
+  opacity: number;
+  duration: string;
+  reverse?: boolean;
+  heightClass: string;
+}) {
+  return (
+    <div
+      className={`absolute bottom-0 left-0 flex w-[200%] animate-wave ${heightClass}`}
+      style={{
+        animationDuration: duration,
+        animationDirection: reverse ? "reverse" : "normal",
+      }}
+    >
+      {[0, 1].map((i) => (
+        <svg
+          key={i}
+          className="h-full w-1/2 shrink-0"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          fill={color}
+          fillOpacity={opacity}
+        >
+          <path d={WAVE_PATH} />
+        </svg>
+      ))}
+    </div>
   );
 }
