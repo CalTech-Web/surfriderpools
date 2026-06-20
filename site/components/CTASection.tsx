@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import PhoneLink from "./PhoneLink";
 
 export default function CTASection({
   title = "Ready for a cleaner, healthier pool?",
@@ -27,12 +28,10 @@ export default function CTASection({
           >
             Get a Free Quote
           </Link>
-          <a
-            href={site.phoneHref}
+          <PhoneLink
             className="rounded-full border border-white/50 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-          >
-            Call {site.phone}
-          </a>
+            label={`Call ${site.phone}`}
+          />
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { services, serviceAreas, site } from "@/lib/site";
+import PhoneLink from "./PhoneLink";
 
 export default function Footer() {
   return (
@@ -65,9 +66,7 @@ export default function Footer() {
           </h3>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
-              <a href={site.phoneHref} className="font-semibold text-white hover:text-aqua-300">
-                {site.phone}
-              </a>
+              <PhoneLink className="font-semibold text-white hover:text-aqua-300" iconClassName="text-aqua-300" />
             </li>
             <li>
               <a href={`mailto:${site.email}`} className="hover:text-aqua-300">

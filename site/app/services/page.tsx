@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
-import Faq from "@/components/Faq";
+import FaqSection from "@/components/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { services, faqs } from "@/lib/site";
@@ -47,17 +47,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <section className="bg-aqua-50/60 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl container-px">
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Service FAQ</Eyebrow>
-            <Heading>Good to know before you book</Heading>
-          </div>
-          <div className="mt-10">
-            <Faq items={faqs} />
-          </div>
-        </div>
-      </section>
+      <FaqSection items={faqs} eyebrow="Service FAQ" title="Good to know before you book" />
 
       <CTASection />
     </>

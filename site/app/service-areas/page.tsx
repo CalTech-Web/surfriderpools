@@ -4,7 +4,9 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import CTASection from "@/components/CTASection";
+import PhoneLink from "@/components/PhoneLink";
 import JsonLd from "@/components/JsonLd";
+import { PulsingMarker, ArrowRightIcon } from "@/components/icons";
 import { breadcrumbSchema } from "@/lib/schema";
 import { serviceAreas, services, site } from "@/lib/site";
 
@@ -40,19 +42,17 @@ export default function ServiceAreasPage() {
               area. If you do not see your town listed, give us a call. There is a
               good chance we cover it.
             </p>
-            <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
+            <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3.5 sm:grid-cols-3">
               {serviceAreas.map((area) => (
-                <li key={area} className="flex items-center gap-2 text-navy-800">
-                  <span className="h-2 w-2 rounded-full bg-aqua-500" />
+                <li key={area} className="flex items-center gap-2.5 text-navy-800">
+                  <PulsingMarker />
                   {area}
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-navy-800/80">
-              Not sure if we reach you? Call{" "}
-              <a href={site.phoneHref} className="font-semibold text-ocean-600">
-                {site.phone}
-              </a>{" "}
+            <p className="mt-8 inline-flex flex-wrap items-center gap-x-1 text-navy-800/80">
+              Not sure if we reach you?
+              <PhoneLink className="font-semibold text-ocean-600 hover:text-aqua-500" label={`Call ${site.phone}`} />
               and we will let you know right away.
             </p>
           </div>
@@ -79,15 +79,15 @@ export default function ServiceAreasPage() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                className="group rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-aqua-300 hover:shadow-md"
               >
                 <h3 className="text-lg text-navy-900">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{s.short}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-ocean-600">
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ocean-600">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-aqua-50 transition-colors group-hover:bg-aqua-500 group-hover:text-navy-950">
+                    <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                   Learn more
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
                 </span>
               </Link>
             ))}

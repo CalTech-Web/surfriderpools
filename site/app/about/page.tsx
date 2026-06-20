@@ -3,9 +3,11 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import CTASection from "@/components/CTASection";
+import PhoneLink from "@/components/PhoneLink";
 import JsonLd from "@/components/JsonLd";
+import { differentiatorIcons } from "@/components/icons";
 import { breadcrumbSchema } from "@/lib/schema";
-import { differentiators, process, site } from "@/lib/site";
+import { differentiators, process } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Surfrider Pool Service",
@@ -73,12 +75,21 @@ export default function AboutPage() {
             <Heading>Why pool owners choose Surfrider</Heading>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {differentiators.map((d) => (
-              <div key={d.title} className="rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm">
-                <h3 className="text-lg text-navy-900">{d.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{d.text}</p>
-              </div>
-            ))}
+            {differentiators.map((d, i) => {
+              const Icon = differentiatorIcons[i % differentiatorIcons.length];
+              return (
+                <div
+                  key={d.title}
+                  className="group rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-aqua-300 hover:shadow-md"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-aqua-50 text-ocean-600 transition-colors group-hover:bg-aqua-500 group-hover:text-navy-950">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-4 text-lg text-navy-900">{d.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{d.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -99,12 +110,9 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-        <p className="mt-10 text-center text-navy-800/80">
-          Questions? Call us anytime at{" "}
-          <a href={site.phoneHref} className="font-semibold text-ocean-600">
-            {site.phone}
-          </a>
-          .
+        <p className="mt-10 inline-flex w-full flex-wrap items-center justify-center gap-x-1 text-center text-navy-800/80">
+          Questions? Call us anytime at
+          <PhoneLink className="font-semibold text-ocean-600 hover:text-aqua-500" />.
         </p>
       </Section>
 

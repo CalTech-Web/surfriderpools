@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import PhoneLink from "@/components/PhoneLink";
 
 export default function NotFound() {
   return (
@@ -18,12 +19,10 @@ export default function NotFound() {
           >
             Back to Home
           </Link>
-          <a
-            href={site.phoneHref}
+          <PhoneLink
             className="rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-          >
-            Call {site.phone}
-          </a>
+            label={`Call ${site.phone}`}
+          />
         </div>
       </div>
     </section>

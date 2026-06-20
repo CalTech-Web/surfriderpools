@@ -55,7 +55,7 @@ function PhoneIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className="text-aqua-400"
+      className="text-aqua-400 animate-phone-ring"
     >
       <path
         d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.5 11.5 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1L6.6 10.8Z"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
+import PhoneLink from "@/components/PhoneLink";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -39,9 +40,7 @@ export default function ContactPage() {
 
             <dl className="mt-8 space-y-5">
               <ContactRow label="Phone">
-                <a href={site.phoneHref} className="font-semibold text-ocean-600 hover:text-aqua-500">
-                  {site.phone}
-                </a>
+                <PhoneLink className="font-semibold text-ocean-600 hover:text-aqua-500" />
               </ContactRow>
               <ContactRow label="Email">
                 <a href={`mailto:${site.email}`} className="font-semibold text-ocean-600 hover:text-aqua-500">

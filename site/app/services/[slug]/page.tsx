@@ -5,8 +5,10 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import CTASection from "@/components/CTASection";
-import Faq from "@/components/Faq";
+import FaqSection from "@/components/FaqSection";
+import PhoneLink from "@/components/PhoneLink";
 import JsonLd from "@/components/JsonLd";
+import { CheckIcon } from "@/components/icons";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 import { services, faqs, site } from "@/lib/site";
 
@@ -80,10 +82,8 @@ export default async function ServiceDetailPage({
             <ul className="mt-6 space-y-3">
               {service.features.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-navy-800">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-aqua-50 text-ocean-600">
-                    <svg width="12" height="12" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                      <path d="M3 9.5 7 13l8-8.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua-50 text-ocean-600">
+                    <CheckIcon className="h-3.5 w-3.5" />
                   </span>
                   {f}
                 </li>
@@ -96,28 +96,16 @@ export default async function ServiceDetailPage({
               >
                 Get a Free Quote
               </Link>
-              <a
-                href={site.phoneHref}
-                className="rounded-full border border-navy-900 px-7 py-3.5 text-center text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-900 hover:text-white"
-              >
-                Call {site.phone}
-              </a>
+              <PhoneLink
+                className="rounded-full border border-navy-900 px-7 py-3.5 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-900 hover:text-white"
+                label={`Call ${site.phone}`}
+              />
             </div>
           </div>
         </div>
       </Section>
 
-      <section className="bg-aqua-50/60 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl container-px">
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>Common Questions</Eyebrow>
-            <Heading>Good to know</Heading>
-          </div>
-          <div className="mt-10">
-            <Faq items={faqs} />
-          </div>
-        </div>
-      </section>
+      <FaqSection items={faqs} eyebrow="Common Questions" title={`${service.title} questions, answered`} />
 
       <Section>
         <div className="mx-auto max-w-2xl text-center">

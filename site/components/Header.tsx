@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { nav, site } from "@/lib/site";
+import PhoneLink from "./PhoneLink";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -16,9 +17,7 @@ export default function Header() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 container-px py-2 text-xs md:text-sm">
           <span className="hidden sm:inline text-aqua-300">{site.tagline}</span>
           <div className="flex items-center gap-4">
-            <a href={site.phoneHref} className="font-semibold hover:text-aqua-300">
-              {site.phone}
-            </a>
+            <PhoneLink className="font-semibold hover:text-aqua-300" iconClassName="text-aqua-300" />
             <span className="hidden md:inline text-white/60">{site.hours}</span>
           </div>
         </div>
@@ -161,12 +160,10 @@ export default function Header() {
             >
               Get a Free Quote
             </Link>
-            <a
-              href={site.phoneHref}
-              className="mt-2 rounded-full border border-navy-900 px-5 py-3 text-center text-sm font-semibold text-navy-900"
-            >
-              Call {site.phone}
-            </a>
+            <PhoneLink
+              className="mt-2 w-full rounded-full border border-navy-900 px-5 py-3 text-sm font-semibold text-navy-900"
+              label={`Call ${site.phone}`}
+            />
           </nav>
         </div>
       )}

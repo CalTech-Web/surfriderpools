@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Section, Eyebrow, Heading } from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
-import Faq from "@/components/Faq";
+import FaqSection from "@/components/FaqSection";
+import PhoneLink from "@/components/PhoneLink";
 import JsonLd from "@/components/JsonLd";
+import { PulsingMarker } from "@/components/icons";
 import { faqSchema } from "@/lib/schema";
 import { services, differentiators, process, faqs, serviceAreas, site } from "@/lib/site";
 
@@ -42,12 +44,10 @@ export default function Home() {
               >
                 Get a Free Quote
               </Link>
-              <a
-                href={site.phoneHref}
-                className="rounded-full border border-white/40 px-7 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Call {site.phone}
-              </a>
+              <PhoneLink
+                className="rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                label={`Call ${site.phone}`}
+              />
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
               <span className="flex items-center gap-2"><Check /> Chemicals included</span>
@@ -221,10 +221,10 @@ export default function Home() {
               We provide pool cleaning, repair, and pressure washing across the area,
               including:
             </p>
-            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-navy-800">
+            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 text-navy-800">
               {serviceAreas.map((area) => (
                 <li key={area} className="flex items-center gap-2 text-sm">
-                  <span className="h-1.5 w-1.5 rounded-full bg-aqua-500" />
+                  <PulsingMarker />
                   {area}
                 </li>
               ))}
@@ -238,17 +238,7 @@ export default function Home() {
       </Section>
 
       {/* FAQ */}
-      <section className="bg-aqua-50/60 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl container-px">
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow>FAQ</Eyebrow>
-            <Heading>Questions pool owners ask us</Heading>
-          </div>
-          <div className="mt-10">
-            <Faq items={faqs} />
-          </div>
-        </div>
-      </section>
+      <FaqSection items={faqs} />
 
       <CTASection />
     </>
