@@ -89,14 +89,14 @@ export default function Footer() {
             Copyright {site.copyrightYear} {site.name}. All Rights Reserved.
           </p>
           <p>
-            Powered by{" "}
+            Built by{" "}
             <a
               href="https://caltechweb.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-aqua-300 hover:text-aqua-400"
             >
-              Caltechweb
+              CalTech Web
             </a>
           </p>
         </div>

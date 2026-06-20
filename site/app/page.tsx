@@ -58,6 +58,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRUST STRIP */}
+      <section className="border-b border-aqua-50 bg-white">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 container-px py-5 gap-y-4 sm:grid-cols-4 sm:gap-y-0 sm:divide-x sm:divide-aqua-50">
+          <div className="flex items-center gap-3 sm:px-6 first:pl-0 last:pr-0">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-aqua-50 text-ocean-600">
+              <MapPin />
+            </span>
+            <div>
+              <p className="text-sm font-bold text-navy-900">Dunedin, FL</p>
+              <p className="text-xs text-navy-800/65">Local, owner operated</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 sm:px-6">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-aqua-50 text-ocean-600">
+              <Tag />
+            </span>
+            <div>
+              <p className="text-sm font-bold text-navy-900">Free Quotes</p>
+              <p className="text-xs text-navy-800/65">On every service</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 sm:px-6">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-aqua-50 text-ocean-600">
+              <Flask />
+            </span>
+            <div>
+              <p className="text-sm font-bold text-navy-900">Chemicals Included</p>
+              <p className="text-xs text-navy-800/65">No hidden add-ons</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 sm:px-6 last:pr-0">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-aqua-50 text-ocean-600">
+              <Clock />
+            </span>
+            <div>
+              <p className="text-sm font-bold text-navy-900">Mon to Sat</p>
+              <p className="text-xs text-navy-800/65">8:00 AM to 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INTRO */}
       <Section>
         <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -125,10 +167,10 @@ export default function Home() {
           <Heading>Pool care you can actually count on</Heading>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {differentiators.map((d) => (
-            <div key={d.title} className="rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm">
+          {differentiators.map((d, i) => (
+            <div key={d.title} className="rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-aqua-50 text-ocean-600">
-                <Check />
+                <DiffIcon index={i} />
               </div>
               <h3 className="mt-4 text-lg text-navy-900">{d.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{d.text}</p>
@@ -227,4 +269,90 @@ function Arrow() {
       <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
+}
+
+// Trust strip icons
+function MapPin() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.7" />
+    </svg>
+  );
+}
+function Tag() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M2.5 10.5 9.5 3.5a1 1 0 0 1 .7-.3H16a.5.5 0 0 1 .5.5v5.8a1 1 0 0 1-.3.7l-7 7a1 1 0 0 1-1.4 0l-5.3-5.3a1 1 0 0 1 0-1.4Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <circle cx="14" cy="6" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+function Flask() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M7 2h6M8 2v6L4.5 14A2 2 0 0 0 6.3 17h7.4a2 2 0 0 0 1.8-3L12 8V2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5.5 13h9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+function Clock() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M10 6v4l2.5 2.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// Differentiator card icons (one per card, in order)
+const diffIcons = [
+  // Local and owner operated
+  (
+    <svg key="local" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.7" />
+    </svg>
+  ),
+  // Chemicals included
+  (
+    <svg key="flask" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M7 2h6M8 2v6L4.5 14A2 2 0 0 0 6.3 17h7.4a2 2 0 0 0 1.8-3L12 8V2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5.5 13h9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
+  // One team for everything
+  (
+    <svg key="wrench" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M14.5 2a3.5 3.5 0 0 0-3.4 4.2L4 13.3A2 2 0 1 0 6.7 16l7.1-7.1A3.5 3.5 0 0 0 18 5.5a3.4 3.4 0 0 0-.4-1.6l-2.1 2.1-1.5-1.5L16.1 2.4A3.5 3.5 0 0 0 14.5 2Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+    </svg>
+  ),
+  // Honest pricing
+  (
+    <svg key="tag" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M2.5 10.5 9.5 3.5a1 1 0 0 1 .7-.3H16a.5.5 0 0 1 .5.5v5.8a1 1 0 0 1-.3.7l-7 7a1 1 0 0 1-1.4 0l-5.3-5.3a1 1 0 0 1 0-1.4Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <circle cx="14" cy="6" r="1" fill="currentColor" />
+    </svg>
+  ),
+  // Flexible scheduling
+  (
+    <svg key="calendar" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <rect x="2.5" y="3.5" width="15" height="14" rx="2" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M2.5 8.5h15M6.5 2v3M13.5 2v3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      <circle cx="7" cy="12" r="1" fill="currentColor" />
+      <circle cx="10" cy="12" r="1" fill="currentColor" />
+      <circle cx="13" cy="12" r="1" fill="currentColor" />
+    </svg>
+  ),
+  // Free quotes
+  (
+    <svg key="quote" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7l-4 2V5Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <path d="M7 8h6M7 11h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+];
+
+function DiffIcon({ index }: { index: number }) {
+  return diffIcons[index] ?? <Check />;
 }
