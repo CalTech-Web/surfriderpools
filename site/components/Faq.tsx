@@ -18,7 +18,7 @@ export default function Faq({ items }: { items: { q: string; a: string }[] }) {
             <button
               type="button"
               onClick={() => setOpen(isOpen ? null : i)}
-              className="flex w-full items-center gap-4 px-5 py-4 text-left md:px-6 md:py-5"
+              className="flex w-full items-center gap-4 px-5 py-4 text-left md:px-6 md:py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-aqua-500 rounded-2xl"
               aria-expanded={isOpen}
             >
               <span

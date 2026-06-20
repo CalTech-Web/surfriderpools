@@ -7,7 +7,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-aqua-50 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-aqua-300 hover:shadow-xl"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-aqua-50 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-aqua-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aqua-500"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image

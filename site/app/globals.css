@@ -41,6 +41,13 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
+/* Consistent focus-visible ring across all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--color-aqua-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .container-px {
   padding-inline: 1.25rem;
 }

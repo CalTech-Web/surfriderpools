@@ -63,7 +63,7 @@ export default function AboutPage() {
               equipment so you can spend more time enjoying the water and less time
               worrying about upkeep.
             </p>
-            <blockquote className="mt-6 border-l-4 border-aqua-500 bg-aqua-50/60 p-5 text-navy-900">
+            <blockquote className="mt-6 rounded-2xl border-l-4 border-aqua-500 bg-aqua-50/60 p-5 text-navy-900">
               &ldquo;A clean, healthy pool should be effortless for the people who own
               it. That is the whole job, and we take it seriously.&rdquo;
               <footer className="mt-2 text-sm font-semibold text-ocean-600">
@@ -107,7 +107,7 @@ export default function AboutPage() {
         </div>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {process.map((p) => (
-            <div key={p.step} className="rounded-2xl border border-aqua-50 p-6">
+            <div key={p.step} className="rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-aqua-500 font-display text-lg font-bold text-navy-950">
                 {p.step}
               </div>

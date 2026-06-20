@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { Section, Eyebrow, Heading } from "@/components/Section";
+import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import PhoneLink from "@/components/PhoneLink";
 import JsonLd from "@/components/JsonLd";
-import { PulsingMarker, ArrowRightIcon } from "@/components/icons";
+import { PulsingMarker } from "@/components/icons";
 import { breadcrumbSchema } from "@/lib/schema";
 import { serviceAreas, services, site } from "@/lib/site";
 import { cities } from "@/lib/cities";
@@ -93,23 +94,13 @@ export default function ServiceAreasPage() {
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>Available Everywhere We Serve</Eyebrow>
             <Heading>Services offered in your area</Heading>
+            <p className="mt-4 text-navy-800/80">
+              From weekly cleaning to repairs and pressure washing, one local team handles it all.
+            </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {services.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="group rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-aqua-300 hover:shadow-md"
-              >
-                <h3 className="text-lg text-navy-900">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{s.short}</p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ocean-600">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-aqua-50 transition-colors group-hover:bg-aqua-500 group-hover:text-navy-950">
-                    <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                  Learn more
-                </span>
-              </Link>
+              <ServiceCard key={s.slug} service={s} />
             ))}
           </div>
         </div>

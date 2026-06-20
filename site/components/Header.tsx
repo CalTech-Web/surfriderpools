@@ -95,7 +95,7 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="rounded-lg p-2 text-navy-900 lg:hidden"
+          className="rounded-lg p-2 text-navy-900 transition-colors hover:bg-aqua-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aqua-500 lg:hidden"
         >
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             {open ? (
@@ -117,7 +117,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => setServicesOpen((v) => !v)}
-                    className="flex w-full items-center justify-between py-3 text-left font-medium text-navy-900"
+                    className="flex w-full items-center justify-between py-3 text-left font-medium text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aqua-500 rounded"
                   >
                     {item.label}
                     <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true">

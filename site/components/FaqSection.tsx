@@ -34,7 +34,7 @@ export default function FaqSection({
               Talk to a real, local person who knows pools.
             </p>
             <PhoneLink
-              className="mt-4 w-full rounded-full bg-aqua-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-aqua-400"
+              className="mt-4 w-full rounded-full bg-aqua-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-aqua-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aqua-500 focus-visible:ring-offset-2"
               label={`Call ${site.phone}`}
             />
           </div>

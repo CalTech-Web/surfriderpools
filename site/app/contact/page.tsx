@@ -38,18 +38,18 @@ export default function ContactPage() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
-            <h2 className="text-2xl text-navy-900">Request your free quote</h2>
-            <p className="mt-3 text-navy-800/80">
+            <h2 className="text-2xl font-bold text-navy-900 tracking-tight">Request your free quote</h2>
+            <p className="mt-3 leading-relaxed text-navy-800/80">
               Whether you want to schedule a service, request a quote, or just have a
               question, reach out and we will get back to you quickly.
             </p>
 
-            <dl className="mt-8 space-y-5">
+            <dl className="mt-8 divide-y divide-aqua-50">
               <ContactRow label="Phone">
-                <PhoneLink className="font-semibold text-ocean-600 hover:text-aqua-500" />
+                <PhoneLink className="font-semibold text-ocean-600 hover:text-aqua-500 transition-colors" />
               </ContactRow>
               <ContactRow label="Email">
-                <a href={`mailto:${site.email}`} className="font-semibold text-ocean-600 hover:text-aqua-500">
+                <a href={`mailto:${site.email}`} className="font-semibold text-ocean-600 hover:text-aqua-500 transition-colors">
                   {site.email}
                 </a>
               </ContactRow>
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
 function ContactRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 py-4">
       <dt className="w-28 shrink-0 text-sm font-semibold uppercase tracking-wider text-navy-900/60">
         {label}
       </dt>

@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection";
 import FaqSection from "@/components/FaqSection";
 import PhoneLink from "@/components/PhoneLink";
 import JsonLd from "@/components/JsonLd";
-import { PulsingMarker } from "@/components/icons";
+import { PulsingMarker, differentiatorIcons } from "@/components/icons";
 import { faqSchema } from "@/lib/schema";
 import { services, differentiators, process, faqs, serviceAreas, site } from "@/lib/site";
 
@@ -40,12 +40,12 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="rounded-full bg-aqua-500 px-7 py-3.5 text-center text-sm font-semibold text-navy-950 transition-colors hover:bg-aqua-400"
+                className="rounded-full bg-aqua-500 px-7 py-3.5 text-center text-sm font-semibold text-navy-950 transition-colors hover:bg-aqua-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
               >
                 Get a Free Quote
               </Link>
               <PhoneLink
-                className="rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                className="rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 label={`Call ${site.phone}`}
               />
             </div>
@@ -152,7 +152,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <Link
               href="/services"
-              className="inline-flex rounded-full bg-navy-900 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+              className="inline-flex rounded-full bg-navy-900 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-navy-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-900 focus-visible:ring-offset-2"
             >
               View All Services
             </Link>
@@ -167,15 +167,18 @@ export default function Home() {
           <Heading>Pool care you can actually count on</Heading>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {differentiators.map((d, i) => (
-            <div key={d.title} className="rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-aqua-50 text-ocean-600">
-                <DiffIcon index={i} />
+          {differentiators.map((d, i) => {
+            const Icon = differentiatorIcons[i % differentiatorIcons.length];
+            return (
+              <div key={d.title} className="group rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-aqua-300 hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-aqua-50 text-ocean-600 transition-colors group-hover:bg-aqua-500 group-hover:text-navy-950">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-4 text-lg text-navy-900">{d.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{d.text}</p>
               </div>
-              <h3 className="mt-4 text-lg text-navy-900">{d.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{d.text}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 
@@ -295,54 +298,3 @@ function Clock() {
   );
 }
 
-// Differentiator card icons (one per card, in order)
-const diffIcons = [
-  // Local and owner operated
-  (
-    <svg key="local" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-      <circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.7" />
-    </svg>
-  ),
-  // Chemicals included
-  (
-    <svg key="flask" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M7 2h6M8 2v6L4.5 14A2 2 0 0 0 6.3 17h7.4a2 2 0 0 0 1.8-3L12 8V2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M5.5 13h9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  ),
-  // One team for everything
-  (
-    <svg key="wrench" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M14.5 2a3.5 3.5 0 0 0-3.4 4.2L4 13.3A2 2 0 1 0 6.7 16l7.1-7.1A3.5 3.5 0 0 0 18 5.5a3.4 3.4 0 0 0-.4-1.6l-2.1 2.1-1.5-1.5L16.1 2.4A3.5 3.5 0 0 0 14.5 2Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-    </svg>
-  ),
-  // Honest pricing
-  (
-    <svg key="tag" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M2.5 10.5 9.5 3.5a1 1 0 0 1 .7-.3H16a.5.5 0 0 1 .5.5v5.8a1 1 0 0 1-.3.7l-7 7a1 1 0 0 1-1.4 0l-5.3-5.3a1 1 0 0 1 0-1.4Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-      <circle cx="14" cy="6" r="1" fill="currentColor" />
-    </svg>
-  ),
-  // Flexible scheduling
-  (
-    <svg key="calendar" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <rect x="2.5" y="3.5" width="15" height="14" rx="2" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M2.5 8.5h15M6.5 2v3M13.5 2v3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      <circle cx="7" cy="12" r="1" fill="currentColor" />
-      <circle cx="10" cy="12" r="1" fill="currentColor" />
-      <circle cx="13" cy="12" r="1" fill="currentColor" />
-    </svg>
-  ),
-  // Free quotes
-  (
-    <svg key="quote" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7l-4 2V5Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-      <path d="M7 8h6M7 11h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-];
-
-function DiffIcon({ index }: { index: number }) {
-  return diffIcons[index] ?? <Check />;
-}
