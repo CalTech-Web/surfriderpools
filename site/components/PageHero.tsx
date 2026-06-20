@@ -11,14 +11,14 @@ export default function PageHero({
   crumbs?: { label: string; href: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden bg-wave">
+    <section className="relative flex min-h-[400px] items-center overflow-hidden bg-wave">
       {/* subtle bottom wave divider */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 overflow-hidden" aria-hidden="true">
         <svg viewBox="0 0 1440 32" preserveAspectRatio="none" className="h-full w-full" fill="white" fillOpacity="0.06">
           <path d="M0,16 C360,32 720,0 1080,16 C1260,24 1360,20 1440,16 L1440,32 L0,32 Z" />
         </svg>
       </div>
-      <div className="relative mx-auto max-w-6xl container-px py-16 md:py-20">
+      <div className="relative mx-auto w-full max-w-6xl container-px py-16 md:py-20">
         {crumbs && (
           <nav className="mb-4 flex flex-wrap items-center gap-1 text-sm text-white/70" aria-label="Breadcrumb">
             {crumbs.map((c, i) => (
