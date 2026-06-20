@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   description:
     "Surfrider Pool Service is a local, owner operated pool company in Dunedin, Florida, serving Pinellas County and Tampa Bay with reliable cleaning, repair, and pressure washing.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Surfrider Pool Service | Dunedin's Local Pool Company",
+    description:
+      "Learn about Surfrider Pool Service, a locally owned pool care company serving Dunedin and Pinellas County. Professional, reliable, and community focused.",
+    url: "/about",
+  },
 };
 
 const crumbs = [

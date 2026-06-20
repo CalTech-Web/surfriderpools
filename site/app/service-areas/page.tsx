@@ -9,12 +9,19 @@ import JsonLd from "@/components/JsonLd";
 import { PulsingMarker, ArrowRightIcon } from "@/components/icons";
 import { breadcrumbSchema } from "@/lib/schema";
 import { serviceAreas, services, site } from "@/lib/site";
+import { cities } from "@/lib/cities";
 
 export const metadata: Metadata = {
   title: "Service Areas in Pinellas County & Tampa Bay",
   description:
     "Surfrider Pool Service provides pool cleaning, repair, and pressure washing in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
   alternates: { canonical: "/service-areas" },
+  openGraph: {
+    title: "Service Areas in Pinellas County & Tampa Bay | Surfrider Pool Service",
+    description:
+      "Surfrider Pool Service provides pool cleaning, repair, and pressure washing in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
+    url: "/service-areas",
+  },
 };
 
 const crumbs = [
@@ -42,13 +49,26 @@ export default function ServiceAreasPage() {
               area. If you do not see your town listed, give us a call. There is a
               good chance we cover it.
             </p>
-            <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3.5 sm:grid-cols-3">
-              {serviceAreas.map((area) => (
-                <li key={area} className="flex items-center gap-2.5 text-navy-800">
-                  <PulsingMarker />
-                  {area}
+            <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3">
+              {cities.map((city) => (
+                <li key={city.slug}>
+                  <Link
+                    href={`/service-areas/${city.slug}`}
+                    className="flex items-center gap-2.5 font-semibold text-ocean-600 hover:text-aqua-500 transition-colors"
+                  >
+                    <PulsingMarker />
+                    {city.name}
+                  </Link>
                 </li>
               ))}
+              {serviceAreas
+                .filter((area) => !cities.some((c) => c.name === area))
+                .map((area) => (
+                  <li key={area} className="flex items-center gap-2.5 text-navy-800">
+                    <PulsingMarker />
+                    {area}
+                  </li>
+                ))}
             </ul>
             <p className="mt-8 inline-flex flex-wrap items-center gap-x-1 text-navy-800/80">
               Not sure if we reach you?

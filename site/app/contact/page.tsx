@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Contact Surfrider Pool Service in Dunedin, Florida for a free pool cleaning, repair, or pressure washing quote. Call 727.453.1330 or send a message.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Surfrider Pool Service | Free Pool Care Quotes",
+    description:
+      "Get in touch with Surfrider Pool Service for a free quote on pool cleaning, repair, or pressure washing in Pinellas County. Call 727.453.1330.",
+    url: "/contact",
+  },
 };
 
 const crumbs = [

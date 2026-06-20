@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Pool care tips, maintenance advice, and guides from Surfrider Pool Service in Pinellas County, Florida.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Pool Care Tips & Blog | Surfrider Pool Service",
+    description:
+      "Read pool care tips, maintenance guides, and seasonal advice from the team at Surfrider Pool Service in Dunedin, FL.",
+    url: "/blog",
+  },
 };
 
 const crumbs = [

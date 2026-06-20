@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services, site } from "@/lib/site";
 import { posts } from "@/lib/blog";
+import { cities } from "@/lib/cities";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -36,5 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
+  const cityRoutes = cities.map((c) => ({
+    url: `${base}/service-areas/${c.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...cityRoutes];
 }

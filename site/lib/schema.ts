@@ -1,4 +1,4 @@
-import { site, serviceAreas } from "./site";
+import { site, serviceAreas, services } from "./site";
 
 const LOGO = `${site.url}/images/logo.png`;
 
@@ -13,6 +13,10 @@ export const localBusinessSchema = {
   telephone: site.phone,
   email: site.email,
   priceRange: "$$",
+  slogan: site.tagline,
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.full)}`,
+  paymentAccepted: "Cash, Check, Credit Card",
+  currenciesAccepted: "USD",
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -34,7 +38,66 @@ export const localBusinessSchema = {
     closes: "18:00",
   },
   description: site.description,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Pool Services",
+    itemListElement: services.map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.title,
+          description: s.short,
+          url: `${site.url}/services/${s.slug}`,
+        },
+      },
+    })),
+  },
 };
+
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site.url}/#organization`,
+    name: site.name,
+    url: site.url,
+    logo: {
+      "@type": "ImageObject",
+      url: LOGO,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: site.phone,
+      contactType: "customer service",
+      areaServed: "US-FL",
+      availableLanguage: "English",
+    },
+    sameAs: Object.values(site.social),
+  };
+}
+
+export function webSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    url: site.url,
+    name: site.name,
+    description: site.description,
+    publisher: { "@id": `${site.url}/#organization` },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${site.url}/blog?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
 
 export function breadcrumbSchema(crumbs: { label: string; href: string }[]) {
   return {
