@@ -12,18 +12,6 @@ export default function CTASection({
     <section className="relative overflow-hidden bg-wave">
       {/* decorative animated pool waves */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <svg
-          className="absolute inset-0 h-full w-full"
-          preserveAspectRatio="xMidYMid slice"
-          viewBox="0 0 1200 400"
-          fill="#ffffff"
-          opacity="0.06"
-        >
-          <circle cx="150" cy="80" r="40" />
-          <circle cx="1050" cy="110" r="64" />
-          <circle cx="980" cy="40" r="22" />
-          <circle cx="280" cy="60" r="26" />
-        </svg>
         <WaveLayer color="#ffffff" opacity={0.08} duration="18s" heightClass="h-24 md:h-36" />
         <WaveLayer color="#22cce4" opacity={0.16} duration="12s" reverse heightClass="h-20 md:h-28" />
         <WaveLayer color="#07172b" opacity={0.32} duration="9s" heightClass="h-14 md:h-20" />
