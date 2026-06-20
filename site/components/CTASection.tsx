@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/lib/site";
 
 export default function CTASection({
@@ -10,19 +9,35 @@ export default function CTASection({
   text?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy-950">
-      {/* background image */}
-      <Image
-        src="/images/gallery-1.jpg"
-        alt=""
+    <section className="relative overflow-hidden bg-wave">
+      {/* decorative SVG background */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full"
         aria-hidden="true"
-        fill
-        sizes="100vw"
-        className="object-cover"
-      />
-      {/* color overlay keeps the text readable */}
-      <div className="absolute inset-0 bg-wave opacity-90" />
-      <div className="absolute inset-0 bg-navy-950/40" />
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 1200 400"
+        fill="none"
+      >
+        {/* bubbles */}
+        <g fill="#ffffff" opacity="0.07">
+          <circle cx="150" cy="80" r="40" />
+          <circle cx="1050" cy="120" r="64" />
+          <circle cx="980" cy="40" r="22" />
+          <circle cx="280" cy="330" r="30" />
+          <circle cx="640" cy="370" r="48" />
+        </g>
+        {/* flowing waves */}
+        <path
+          d="M0 300 C 200 250, 400 350, 600 300 S 1000 250, 1200 300 V400 H0 Z"
+          fill="#ffffff"
+          opacity="0.06"
+        />
+        <path
+          d="M0 340 C 250 300, 450 390, 700 340 S 1050 300, 1200 345 V400 H0 Z"
+          fill="#07172b"
+          opacity="0.18"
+        />
+      </svg>
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 container-px py-16 text-center md:py-20">
         <h2 className="max-w-2xl text-3xl text-white md:text-4xl text-balance">{title}</h2>
