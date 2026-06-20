@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileActionBar from "@/components/MobileActionBar";
 import JsonLd from "@/components/JsonLd";
 import { localBusinessSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -61,8 +62,10 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <JsonLd data={localBusinessSchema} />
         <Header />
-        <main className="flex-1">{children}</main>
+        {/* pb-[72px] on mobile ensures content is never hidden behind the sticky action bar */}
+        <main className="flex-1 pb-[72px] lg:pb-0">{children}</main>
         <Footer />
+        <MobileActionBar />
       </body>
     </html>
   );
