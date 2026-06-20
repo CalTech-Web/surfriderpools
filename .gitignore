@@ -1,0 +1,18 @@
+# dependencies
+site/node_modules
+
+# next build output
+site/.next
+site/out
+
+# vercel
+.vercel
+site/.vercel
+
+# env
+site/.env*
+!site/.env.example
+
+# misc
+.DS_Store
+*.log

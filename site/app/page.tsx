@@ -1,0 +1,230 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Section, Eyebrow, Heading } from "@/components/Section";
+import ServiceCard from "@/components/ServiceCard";
+import CTASection from "@/components/CTASection";
+import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
+import { faqSchema } from "@/lib/schema";
+import { services, differentiators, process, faqs, serviceAreas, site } from "@/lib/site";
+
+export default function Home() {
+  return (
+    <>
+      <JsonLd data={faqSchema(faqs)} />
+
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-navy-950">
+        <Image
+          src="/images/hero-pool.jpg"
+          alt="Sparkling clean screened in swimming pool in Florida"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/70 to-transparent" />
+        <div className="relative mx-auto max-w-6xl container-px py-24 md:py-32">
+          <div className="max-w-2xl animate-fade-up">
+            <Eyebrow>Pinellas County, Florida</Eyebrow>
+            <h1 className="mt-3 text-4xl font-extrabold leading-tight text-white md:text-6xl text-balance">
+              Your trusted partner for professional pool care
+            </h1>
+            <p className="mt-5 max-w-xl text-lg text-white/85">
+              Surfrider Pool Service keeps your pool clean, safe, and ready to swim
+              all year. Cleaning, repair, and pressure washing for homes and
+              businesses across Pinellas County and Tampa Bay.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/contact"
+                className="rounded-full bg-aqua-500 px-7 py-3.5 text-center text-sm font-semibold text-navy-950 transition-colors hover:bg-aqua-400"
+              >
+                Get a Free Quote
+              </Link>
+              <a
+                href={site.phoneHref}
+                className="rounded-full border border-white/40 px-7 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Call {site.phone}
+              </a>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
+              <span className="flex items-center gap-2"><Check /> Chemicals included</span>
+              <span className="flex items-center gap-2"><Check /> Free quotes</span>
+              <span className="flex items-center gap-2"><Check /> Local & owner operated</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <Section>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <Eyebrow>Welcome to Surfrider Pool Service</Eyebrow>
+            <Heading>Your trusted pool care partner in Pinellas County</Heading>
+            <p className="mt-5 text-lg leading-relaxed text-navy-800/85">
+              Surfrider Pool Service is dedicated to making pool care effortless. We
+              provide reliable cleaning, repair, and parts services with a focus on
+              quality and customer satisfaction, so your pool stays a source of
+              enjoyment and relaxation, not a chore.
+            </p>
+            <p className="mt-4 leading-relaxed text-navy-800/75">
+              We are local, owner operated, and proud to serve homeowners and
+              businesses throughout Pinellas County and the greater Tampa Bay area.
+            </p>
+            <Link href="/about" className="mt-6 inline-flex items-center gap-1 font-semibold text-ocean-600">
+              Read more about us
+              <Arrow />
+            </Link>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lg">
+            <Image
+              src="/images/pool-lanai.jpg"
+              alt="Beautiful screened swimming pool maintained by Surfrider Pool Service"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </Section>
+
+      {/* SERVICES */}
+      <section className="bg-aqua-50/60 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl container-px">
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>Our Pool Services</Eyebrow>
+            <Heading>Comprehensive solutions for your pool needs</Heading>
+            <p className="mt-4 text-navy-800/80">
+              From regular maintenance to repairs and outdoor cleaning, our
+              experienced team keeps your pool in top condition all year.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {services.map((s) => (
+              <ServiceCard key={s.slug} service={s} />
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/services"
+              className="inline-flex rounded-full bg-navy-900 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+            >
+              View All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <Section>
+        <div className="mx-auto max-w-2xl text-center">
+          <Eyebrow>Why Choose Us</Eyebrow>
+          <Heading>Pool care you can actually count on</Heading>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {differentiators.map((d) => (
+            <div key={d.title} className="rounded-2xl border border-aqua-50 bg-white p-6 shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-aqua-50 text-ocean-600">
+                <Check />
+              </div>
+              <h3 className="mt-4 text-lg text-navy-900">{d.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy-800/80">{d.text}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* PROCESS */}
+      <section className="bg-navy-950 py-16 text-white md:py-24">
+        <div className="mx-auto max-w-6xl container-px">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-wider text-aqua-300">
+              How It Works
+            </span>
+            <h2 className="mt-3 text-3xl md:text-4xl text-balance">Getting started is simple</h2>
+          </div>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {process.map((p) => (
+              <div key={p.step}>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-aqua-500 font-display text-lg font-bold text-navy-950">
+                  {p.step}
+                </div>
+                <h3 className="mt-4 text-lg text-white">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">{p.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS */}
+      <Section>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lg">
+            <Image
+              src="/images/gallery-1.jpg"
+              alt="Resort style pool in the Tampa Bay area"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <Eyebrow>Service Areas</Eyebrow>
+            <Heading>Proudly serving Pinellas County and Tampa Bay</Heading>
+            <p className="mt-5 text-navy-800/80">
+              We provide pool cleaning, repair, and pressure washing across the area,
+              including:
+            </p>
+            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-navy-800">
+              {serviceAreas.map((area) => (
+                <li key={area} className="flex items-center gap-2 text-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-aqua-500" />
+                  {area}
+                </li>
+              ))}
+            </ul>
+            <Link href="/service-areas" className="mt-6 inline-flex items-center gap-1 font-semibold text-ocean-600">
+              See all service areas
+              <Arrow />
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <section className="bg-aqua-50/60 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl container-px">
+          <div className="mx-auto max-w-2xl text-center">
+            <Eyebrow>FAQ</Eyebrow>
+            <Heading>Questions pool owners ask us</Heading>
+          </div>
+          <div className="mt-10">
+            <Faq items={faqs} />
+          </div>
+        </div>
+      </section>
+
+      <CTASection />
+    </>
+  );
+}
+
+function Check() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M3 9.5 7 13l8-8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
