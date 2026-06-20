@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 
 export default function CTASection({
@@ -9,8 +10,21 @@ export default function CTASection({
   text?: string;
 }) {
   return (
-    <section className="bg-wave">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 container-px py-16 text-center md:py-20">
+    <section className="relative overflow-hidden bg-navy-950">
+      {/* background image */}
+      <Image
+        src="/images/gallery-1.jpg"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      {/* color overlay keeps the text readable */}
+      <div className="absolute inset-0 bg-wave opacity-90" />
+      <div className="absolute inset-0 bg-navy-950/40" />
+
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 container-px py-16 text-center md:py-20">
         <h2 className="max-w-2xl text-3xl text-white md:text-4xl text-balance">{title}</h2>
         <p className="max-w-xl text-white/85">{text}</p>
         <div className="flex flex-col gap-3 sm:flex-row">
