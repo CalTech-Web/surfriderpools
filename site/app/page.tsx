@@ -140,11 +140,11 @@ export default function Home() {
             <Eyebrow>Our Pool Services</Eyebrow>
             <Heading>Comprehensive solutions for your pool needs</Heading>
             <p className="mt-4 text-navy-800/80">
-              From regular maintenance to repairs and outdoor cleaning, our
-              experienced team keeps your pool in top condition all year.
+              From regular maintenance to expert repairs, our experienced team
+              keeps your pool in top condition all year.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
             {services.map((s) => (
               <ServiceCard key={s.slug} service={s} />
             ))}
