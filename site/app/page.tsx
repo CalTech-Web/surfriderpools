@@ -144,7 +144,7 @@ export default function Home() {
               keeps your pool in top condition all year.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {services.map((s) => (
               <ServiceCard key={s.slug} service={s} />
             ))}
