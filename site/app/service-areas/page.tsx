@@ -98,7 +98,7 @@ export default function ServiceAreasPage() {
               From weekly cleaning to repairs, one local team handles it all.
             </p>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {services.map((s) => (
               <ServiceCard key={s.slug} service={s} />
             ))}

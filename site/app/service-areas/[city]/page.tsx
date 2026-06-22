@@ -172,7 +172,7 @@ export default async function CityPage({
               All three services are available to {city.name} homeowners and businesses. Chemicals are always included.
             </p>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {services.map((s) => (
               <ServiceCard key={s.slug} service={s} />
             ))}
