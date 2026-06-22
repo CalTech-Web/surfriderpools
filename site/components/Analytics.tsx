@@ -1,11 +1,11 @@
 import Script from "next/script";
 
 /**
- * Google Analytics 4. Renders nothing until NEXT_PUBLIC_GA_ID is set in the
- * environment, so it is a safe no-op until a real GA4 Measurement ID is added.
+ * Google Analytics 4. Uses the live Surfrider Pool Service Measurement ID by
+ * default, and can be overridden with NEXT_PUBLIC_GA_ID in the environment.
  */
 export default function Analytics() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-RD3YGDXCV8";
   if (!gaId) return null;
 
   return (
