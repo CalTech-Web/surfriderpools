@@ -91,8 +91,8 @@ export default function ContactForm({ source = "free-quote" }: { source?: string
         />
       </label>
 
-      {/* Turnstile widget mounts here once the site key is added */}
-      <div className="cf-turnstile" data-sitekey="" />
+      {/* Cloudflare Turnstile widget (implicit render via the api.js script in layout) */}
+      <div className="cf-turnstile" data-sitekey="0x4AAAAAADpQubM9Ber7Mn1q" />
 
       <button
         type="submit"
