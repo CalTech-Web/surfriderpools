@@ -13,14 +13,14 @@ import { serviceAreas, services, site } from "@/lib/site";
 import { cities } from "@/lib/cities";
 
 export const metadata: Metadata = {
-  title: "Service Areas in Pinellas County & Tampa Bay",
+  title: "Service Areas in Pinellas County",
   description:
-    "Surfrider Pool Service provides pool cleaning and repair in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
+    "Surfrider Pool Service provides pool cleaning and repair in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County.",
   alternates: { canonical: "/service-areas" },
   openGraph: {
-    title: "Service Areas in Pinellas County & Tampa Bay | Surfrider Pool Service",
+    title: "Service Areas in Pinellas County | Surfrider Pool Service",
     description:
-      "Surfrider Pool Service provides pool cleaning and repair in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
+      "Surfrider Pool Service provides pool cleaning and repair in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County.",
     url: "/service-areas",
   },
 };
@@ -36,7 +36,7 @@ export default function ServiceAreasPage() {
       <JsonLd data={breadcrumbSchema(crumbs)} />
       <PageHero
         title="Service Areas"
-        subtitle="Proudly serving Pinellas County and the greater Tampa Bay area with reliable, local pool care."
+        subtitle="Proudly serving Pinellas County with reliable, local pool care."
         crumbs={crumbs}
       />
 
@@ -76,11 +76,15 @@ export default function ServiceAreasPage() {
               <PhoneLink className="font-semibold text-ocean-600 hover:text-aqua-500" label={`Call ${site.phone}`} />
               and we will let you know right away.
             </p>
+            <div className="mt-6 rounded-2xl border border-aqua-50 bg-aqua-50/60 p-5 text-sm text-navy-800/85">
+              <p><span className="font-semibold text-navy-900">Hours:</span> {site.hours}</p>
+              <p className="mt-1.5">{site.emergencyNote}</p>
+            </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lg">
             <Image
               src="/images/gallery-4.jpg"
-              alt="Backyard pool and outdoor living space in the Tampa Bay area"
+              alt="Backyard pool and outdoor living space in Pinellas County"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

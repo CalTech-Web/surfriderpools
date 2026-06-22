@@ -82,7 +82,7 @@ export default async function ServiceDetailPage({
             <p className="mt-4 text-navy-800/75">
               Available to homeowners and businesses{" "}
               <Link href="/service-areas" className="font-semibold text-ocean-600 hover:text-aqua-500">
-                throughout Pinellas County and Tampa Bay
+                throughout Pinellas County
               </Link>
               .
             </p>

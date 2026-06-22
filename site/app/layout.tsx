@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "pool cleaning Pinellas County",
     "pool service Dunedin",
     "pool repair Clearwater",
-    "pool maintenance Tampa Bay",
+    "pool maintenance Pinellas County",
     "weekly pool service",
   ],
   alternates: { canonical: "/" },

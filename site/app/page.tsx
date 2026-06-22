@@ -34,8 +34,7 @@ export default function Home() {
             </h1>
             <p className="mt-5 max-w-xl text-lg text-white/85">
               Surfrider Pool Service keeps your pool clean, safe, and ready to swim
-              all year. Cleaning and repair for homes and
-              businesses across Pinellas County and Tampa Bay.
+              all year for homes and businesses across Pinellas County.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -93,7 +92,7 @@ export default function Home() {
               <Clock />
             </span>
             <div>
-              <p className="text-sm font-bold text-navy-900">Mon to Sat</p>
+              <p className="text-sm font-bold text-navy-900">Mon to Fri</p>
               <p className="text-xs text-navy-800/65">8:00 AM to 6:00 PM</p>
             </div>
           </div>
@@ -114,7 +113,7 @@ export default function Home() {
             </p>
             <p className="mt-4 leading-relaxed text-navy-800/75">
               We are local, owner operated, and proud to serve homeowners and
-              businesses throughout Pinellas County and the greater Tampa Bay area.
+              businesses throughout Pinellas County.
             </p>
             <Link href="/about" className="mt-6 inline-flex items-center gap-1 font-semibold text-ocean-600">
               Read more about us
@@ -211,7 +210,7 @@ export default function Home() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lg">
             <Image
               src="/images/gallery-1.jpg"
-              alt="Resort style pool in the Tampa Bay area"
+              alt="Resort style pool in Pinellas County"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -219,7 +218,7 @@ export default function Home() {
           </div>
           <div>
             <Eyebrow>Service Areas</Eyebrow>
-            <Heading>Proudly serving Pinellas County and Tampa Bay</Heading>
+            <Heading>Proudly serving Pinellas County</Heading>
             <p className="mt-5 text-navy-800/80">
               We provide pool cleaning and repair across the area,
               including:

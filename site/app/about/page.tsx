@@ -13,7 +13,7 @@ import { differentiators, process } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Surfrider Pool Service",
   description:
-    "Surfrider Pool Service is a local, owner operated pool company in Dunedin, Florida, serving Pinellas County and Tampa Bay with reliable cleaning and repair.",
+    "Surfrider Pool Service is a local, owner operated pool company in Dunedin, Florida, serving Pinellas County with reliable cleaning and repair.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Surfrider Pool Service | Dunedin's Local Pool Company",
@@ -56,7 +56,7 @@ export default function AboutPage() {
               Surfrider Pool Service is a Dunedin based pool company serving homeowners
               and businesses{" "}
               <Link href="/service-areas" className="font-semibold text-ocean-600 hover:text-aqua-500">
-                across Pinellas County and the greater Tampa Bay area
+                across Pinellas County
               </Link>
               . We specialize in{" "}
               <Link href="/services" className="font-semibold text-ocean-600 hover:text-aqua-500">
@@ -72,7 +72,7 @@ export default function AboutPage() {
             </p>
             <blockquote className="mt-6 rounded-2xl border-l-4 border-aqua-500 bg-aqua-50/60 p-5 text-navy-900">
               &ldquo;A clean, healthy pool should be effortless for the people who own
-              it. That is the whole job, and we take it seriously.&rdquo;
+              it. That is our job, and we take it seriously.&rdquo;
               <footer className="mt-2 text-sm font-semibold text-ocean-600">
                 Todd, Owner
               </footer>

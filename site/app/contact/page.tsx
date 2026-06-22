@@ -55,8 +55,9 @@ export default function ContactPage() {
               </ContactRow>
               <ContactRow label="Address">{site.address.full}</ContactRow>
               <ContactRow label="Hours">{site.hours}</ContactRow>
+              <ContactRow label="Emergencies">{site.emergencyNote}</ContactRow>
               <ContactRow label="Service Area">
-                Pinellas County and the greater Tampa Bay area
+                Pinellas County
               </ContactRow>
             </dl>
           </div>

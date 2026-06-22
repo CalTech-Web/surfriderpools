@@ -53,14 +53,14 @@ export const cities: City[] = [
     name: "Safety Harbor",
     h1: "Pool Service in Safety Harbor, FL",
     introParagraph:
-      "Safety Harbor homeowners enjoy a quieter pace with proximity to Old Tampa Bay, making a well maintained pool a natural centerpiece of outdoor life. Surfrider Pool Service provides the attentive care that Safety Harbor residents expect from a local, professional team.",
+      "Safety Harbor homeowners enjoy a quieter pace with a relaxed waterfront setting, making a well maintained pool a natural centerpiece of outdoor life. Surfrider Pool Service provides the attentive care that Safety Harbor residents expect from a local, professional team.",
     neighborhoods: [
       "Safety Harbor Resort and Spa area",
       "Philippe Park",
       "Downtown Safety Harbor",
     ],
     poolCareNote:
-      "The proximity to Old Tampa Bay means Safety Harbor pools can accumulate mineral deposits and organic matter that require careful balancing and regular brushing.",
+      "Safety Harbor's waterfront setting means pools there can accumulate mineral deposits and organic matter that require careful balancing and regular brushing.",
   },
   {
     slug: "oldsmar",
@@ -70,7 +70,7 @@ export const cities: City[] = [
       "Oldsmar families count on their pools for year round relaxation, and the humid Florida climate means regular cleaning and chemistry maintenance are essential. Surfrider Pool Service serves Oldsmar homeowners with the same reliable, scheduled care that keeps pools healthy and ready to use.",
     neighborhoods: [
       "R.E. Olds Park area",
-      "Tampa Bay waterfront",
+      "Waterfront neighborhoods",
       "Oldsmar residential communities",
     ],
     poolCareNote:

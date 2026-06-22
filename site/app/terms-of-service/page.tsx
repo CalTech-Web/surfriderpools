@@ -27,9 +27,9 @@ export default function TermsPage() {
             </p>
             <h2>Services</h2>
             <p>
-              Surfrider Pool Service provides pool cleaning, repair, and pressure
-              washing in Pinellas County and the Tampa Bay area. Quotes are provided
-              free of charge and service pricing is confirmed before work begins.
+              Surfrider Pool Service provides pool cleaning and repair in Pinellas
+              County. Quotes are provided free of charge and service pricing is
+              confirmed before work begins.
             </p>
             <h2>Website Content</h2>
             <p>

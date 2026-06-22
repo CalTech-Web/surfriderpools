@@ -9,10 +9,12 @@ export const site = {
   formKey: "surfriderpools.com",
   tagline: "Your trusted partner for professional pool care in Pinellas County.",
   description:
-    "Surfrider Pool Service provides reliable pool cleaning and repair for homes and businesses across Pinellas County and the Tampa Bay area. Free quotes, chemicals included, flexible scheduling.",
+    "Surfrider Pool Service provides reliable pool cleaning and repair for homes and businesses across Pinellas County. Free quotes, chemicals included, flexible scheduling.",
   phone: "727.403.7088",
   phoneHref: "tel:7274037088",
   email: "todd@surfriderpm.com",
+  emergencyNote:
+    "For emergencies, please call and leave a message, or send an email or text.",
   address: {
     street: "1350 County Road 1 #123",
     city: "Dunedin",
@@ -21,7 +23,7 @@ export const site = {
     full: "1350 County Road 1 #123, Dunedin, FL 34697",
   },
   geo: { lat: 28.0353, lng: -82.7637 },
-  hours: "Mon to Sat, 8:00 AM to 6:00 PM",
+  hours: "Mon to Fri, 8:00 AM to 6:00 PM",
   copyrightYear: 2026,
   social: {} as Record<string, string>,
 };
@@ -67,9 +69,9 @@ export const services: Service[] = [
     blurb:
       "When something goes wrong, our technicians diagnose the problem and fix it right. From leaks and failing pumps to green pool recovery, we get your pool running smoothly again.",
     features: [
-      "Leak detection and repair",
+      "Leak detection and repair (refer to our affiliated business partner)",
       "Pump, motor, and filter repair or replacement",
-      "Pool heater diagnosis and repair",
+      "Pool heater diagnosis and repair (refer to our affiliated business partner)",
       "Plumbing and valve repair",
       "Equipment troubleshooting and part replacement",
       "Green pool recovery and algae cleanup",
@@ -89,12 +91,7 @@ export const serviceAreas = [
   "Tarpon Springs",
   "Safety Harbor",
   "Oldsmar",
-  "Largo",
-  "Seminole",
   "Belleair",
-  "Pinellas Park",
-  "St. Petersburg",
-  "Tampa Bay Area",
 ];
 
 export const differentiators = [
@@ -150,7 +147,7 @@ export const process = [
 export const faqs = [
   {
     q: "What areas do you serve?",
-    a: "We serve Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and the wider Pinellas County and Tampa Bay area. If you are nearby, just ask.",
+    a: "We serve Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and the wider Pinellas County area. If you are nearby, just ask.",
   },
   {
     q: "How often should my pool be cleaned?",

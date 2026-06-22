@@ -21,8 +21,8 @@ export default function Footer() {
             </span>
           </Link>
           <p className="mt-4 text-sm leading-relaxed">
-            Reliable pool cleaning and repair across Pinellas
-            County and the Tampa Bay area. Local, owner operated, and ready to help.
+            Reliable pool cleaning and repair across Pinellas County. Local, owner
+            operated, and ready to help.
           </p>
         </div>
 
@@ -77,7 +77,8 @@ export default function Footer() {
             <li>{site.address.full}</li>
             <li className="text-white/60">{site.hours}</li>
           </ul>
-          <p className="mt-5 text-xs text-white/55">
+          <p className="mt-4 text-xs text-white/55">{site.emergencyNote}</p>
+          <p className="mt-3 text-xs text-white/55">
             Serving {serviceAreas.slice(0, 6).join(", ")}, and more.
           </p>
         </div>
