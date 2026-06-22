@@ -18,7 +18,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-navy-950">
         <Image
-          src="/images/hero-pool.jpg"
+          src="/images/hero-pool-real.jpg"
           alt="Sparkling clean screened in swimming pool in Florida"
           fill
           priority
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lg">
             <Image
-              src="/images/pool-lanai.jpg"
+              src="/images/pool-lanai-real.jpg"
               alt="Beautiful screened swimming pool maintained by Surfrider Pool Service"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
