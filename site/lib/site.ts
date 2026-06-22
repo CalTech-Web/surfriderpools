@@ -9,9 +9,9 @@ export const site = {
   formKey: "surfriderpools.com",
   tagline: "Your trusted partner for professional pool care in Pinellas County.",
   description:
-    "Surfrider Pool Service provides reliable pool cleaning, repair, and pressure washing for homes and businesses across Pinellas County and the Tampa Bay area. Free quotes, chemicals included, flexible scheduling.",
-  phone: "727.453.1330",
-  phoneHref: "tel:7274531330",
+    "Surfrider Pool Service provides reliable pool cleaning and repair for homes and businesses across Pinellas County and the Tampa Bay area. Free quotes, chemicals included, flexible scheduling.",
+  phone: "727.403.7088",
+  phoneHref: "tel:7274037088",
   email: "todd@surfriderpm.com",
   address: {
     street: "1350 County Road 1 #123",
@@ -58,7 +58,7 @@ export const services: Service[] = [
     imageAlt: "Pool technician skimming leaves from a clear blue swimming pool",
     metaTitle: "Pool Cleaning Service in Pinellas County | Surfrider Pool Service",
     metaDescription:
-      "Reliable weekly and bi-weekly pool cleaning in Dunedin, Clearwater, and across Pinellas County. Chemicals included, free quotes. Call 727.453.1330.",
+      "Reliable weekly and bi-weekly pool cleaning in Dunedin, Clearwater, and across Pinellas County. Chemicals included, free quotes. Call 727.403.7088.",
   },
   {
     slug: "pool-repair",
@@ -78,26 +78,7 @@ export const services: Service[] = [
     imageAlt: "Close up of clean blue tiled swimming pool water",
     metaTitle: "Pool Repair Service in Pinellas County | Surfrider Pool Service",
     metaDescription:
-      "Pool repair in Dunedin and across Pinellas County. Leak detection, pump and filter repair, heaters, and green pool recovery. Free quotes. Call 727.453.1330.",
-  },
-  {
-    slug: "pressure-washing",
-    title: "Pressure Washing",
-    short: "Restore your deck, driveway, and outdoor surfaces.",
-    blurb:
-      "Bring your outdoor space back to life. Our pressure washing removes dirt, algae, and stains from your pool deck, driveway, walkways, and fences so everything looks fresh and clean.",
-    features: [
-      "Pool deck and patio cleaning",
-      "Driveway and walkway washing",
-      "Fence and exterior surface cleaning",
-      "Removal of dirt, algae, and stains",
-      "Restores the look of your outdoor space",
-    ],
-    image: "/images/pressure-washing.jpg",
-    imageAlt: "Worker in yellow boots pressure washing a concrete driveway",
-    metaTitle: "Pressure Washing Service in Pinellas County | Surfrider Pool Service",
-    metaDescription:
-      "Pressure washing for pool decks, driveways, patios, and fences in Dunedin and across Pinellas County. Free quotes. Call 727.453.1330.",
+      "Pool repair in Dunedin and across Pinellas County. Leak detection, pump and filter repair, heaters, and green pool recovery. Free quotes. Call 727.403.7088.",
   },
 ];
 
@@ -127,7 +108,7 @@ export const differentiators = [
   },
   {
     title: "One team for everything",
-    text: "Cleaning, repair, and pressure washing handled by skilled technicians, so you only need one call.",
+    text: "Cleaning and repair handled by skilled technicians, so you only need one call.",
   },
   {
     title: "Honest pricing",
@@ -189,7 +170,7 @@ export const faqs = [
   },
   {
     q: "Do you offer free quotes?",
-    a: "Yes. Every service comes with a free, no pressure quote. Call 727.453.1330 or send us a message to get started.",
+    a: "Yes. Every service comes with a free, no pressure quote. Call 727.403.7088 or send us a message to get started.",
   },
 ];
 

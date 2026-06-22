@@ -15,12 +15,12 @@ import { cities } from "@/lib/cities";
 export const metadata: Metadata = {
   title: "Service Areas in Pinellas County & Tampa Bay",
   description:
-    "Surfrider Pool Service provides pool cleaning, repair, and pressure washing in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
+    "Surfrider Pool Service provides pool cleaning and repair in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
   alternates: { canonical: "/service-areas" },
   openGraph: {
     title: "Service Areas in Pinellas County & Tampa Bay | Surfrider Pool Service",
     description:
-      "Surfrider Pool Service provides pool cleaning, repair, and pressure washing in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
+      "Surfrider Pool Service provides pool cleaning and repair in Dunedin, Clearwater, Palm Harbor, Tarpon Springs, Safety Harbor, Oldsmar, and across Pinellas County and Tampa Bay.",
     url: "/service-areas",
   },
 };
@@ -95,7 +95,7 @@ export default function ServiceAreasPage() {
             <Eyebrow>Available Everywhere We Serve</Eyebrow>
             <Heading>Services offered in your area</Heading>
             <p className="mt-4 text-navy-800/80">
-              From weekly cleaning to repairs and pressure washing, one local team handles it all.
+              From weekly cleaning to repairs, one local team handles it all.
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">

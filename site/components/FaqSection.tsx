@@ -8,7 +8,7 @@ export default function FaqSection({
   items,
   eyebrow = "FAQ",
   title = "Questions pool owners ask us",
-  intro = "Everything you need to know about our pool cleaning, repair, and pressure washing services. Still have a question? We are only a call away.",
+  intro = "Everything you need to know about our pool cleaning and repair services. Still have a question? We are only a call away.",
 }: {
   items: { q: string; a: string }[];
   eyebrow?: string;

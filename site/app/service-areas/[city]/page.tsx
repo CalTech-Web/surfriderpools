@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!city) return {};
 
   const title = `Pool Service in ${city.name}, FL | Surfrider Pool Service`;
-  const description = `Surfrider Pool Service provides reliable pool cleaning, repair, and pressure washing in ${city.name}, FL. Chemicals included, free quotes. Call 727.453.1330.`;
+  const description = `Surfrider Pool Service provides reliable pool cleaning and repair in ${city.name}, FL. Chemicals included, free quotes. Call 727.403.7088.`;
 
   return {
     title,
@@ -83,7 +83,7 @@ export default async function CityPage({
       longitude: site.geo.lng,
     },
     areaServed: { "@type": "City", name: city.name, addressRegion: "FL" },
-    description: `Surfrider Pool Service provides pool cleaning, repair, and pressure washing in ${city.name}, FL.`,
+    description: `Surfrider Pool Service provides pool cleaning and repair in ${city.name}, FL.`,
   };
 
   return (
@@ -92,7 +92,7 @@ export default async function CityPage({
 
       <PageHero
         title={city.h1}
-        subtitle={`Reliable pool cleaning, repair, and pressure washing for ${city.name} homeowners. Free quotes, chemicals included.`}
+        subtitle={`Reliable pool cleaning and repair for ${city.name} homeowners. Free quotes, chemicals included.`}
         crumbs={crumbs}
       />
 
@@ -107,7 +107,7 @@ export default async function CityPage({
             <p className="mt-4 leading-relaxed text-navy-800/75">
               From{" "}
               <Link href="/services" className="font-semibold text-ocean-600 hover:text-aqua-500">
-                weekly pool cleaning to repairs and pressure washing
+                weekly pool cleaning to repairs
               </Link>
               , our {city.name} customers get dependable, local care. We also serve nearby{" "}
               <Link

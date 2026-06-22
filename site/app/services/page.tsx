@@ -12,12 +12,12 @@ import { services, faqs } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Pool Services in Pinellas County",
   description:
-    "Professional pool cleaning, pool repair, and pressure washing across Pinellas County and Tampa Bay. Explore the full range of services from Surfrider Pool Service.",
+    "Professional pool cleaning and pool repair across Pinellas County and Tampa Bay. Explore the full range of services from Surfrider Pool Service.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Pool Services in Pinellas County | Surfrider Pool Service",
     description:
-      "Pool cleaning, repair, and pressure washing for homes and businesses across Pinellas County and Tampa Bay. One local team for everything your pool needs.",
+      "Pool cleaning and repair for homes and businesses across Pinellas County and Tampa Bay. One local team for everything your pool needs.",
     url: "/services",
   },
 };
@@ -33,7 +33,7 @@ export default function ServicesPage() {
       <JsonLd data={[breadcrumbSchema(crumbs), faqSchema(faqs)]} />
       <PageHero
         title="Our Pool Services"
-        subtitle="Comprehensive pool care for homes and businesses across Pinellas County and Tampa Bay. Cleaning, repair, and pressure washing, all handled by one local team."
+        subtitle="Comprehensive pool care for homes and businesses across Pinellas County and Tampa Bay. Cleaning and repair, all handled by one local team."
         crumbs={crumbs}
       />
 

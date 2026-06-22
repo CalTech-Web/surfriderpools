@@ -21,7 +21,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="mt-4 text-sm leading-relaxed">
-            Reliable pool cleaning, repair, and pressure washing across Pinellas
+            Reliable pool cleaning and repair across Pinellas
             County and the Tampa Bay area. Local, owner operated, and ready to help.
           </p>
         </div>

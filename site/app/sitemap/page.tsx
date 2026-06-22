@@ -9,7 +9,7 @@ import { posts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Sitemap",
   description:
-    "Browse every page on the Surfrider Pool Service website, including our pool cleaning, repair, and pressure washing services across Pinellas County.",
+    "Browse every page on the Surfrider Pool Service website, including our pool cleaning and repair services across Pinellas County.",
   alternates: { canonical: "/sitemap" },
 };
 

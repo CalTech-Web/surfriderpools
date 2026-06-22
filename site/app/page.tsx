@@ -34,7 +34,7 @@ export default function Home() {
             </h1>
             <p className="mt-5 max-w-xl text-lg text-white/85">
               Surfrider Pool Service keeps your pool clean, safe, and ready to swim
-              all year. Cleaning, repair, and pressure washing for homes and
+              all year. Cleaning and repair for homes and
               businesses across Pinellas County and Tampa Bay.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -221,7 +221,7 @@ export default function Home() {
             <Eyebrow>Service Areas</Eyebrow>
             <Heading>Proudly serving Pinellas County and Tampa Bay</Heading>
             <p className="mt-5 text-navy-800/80">
-              We provide pool cleaning, repair, and pressure washing across the area,
+              We provide pool cleaning and repair across the area,
               including:
             </p>
             <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 text-navy-800">
