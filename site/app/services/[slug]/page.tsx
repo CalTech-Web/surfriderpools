@@ -11,6 +11,18 @@ import JsonLd from "@/components/JsonLd";
 import { CheckIcon } from "@/components/icons";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 import { services, faqs, site } from "@/lib/site";
+import { getPost } from "@/lib/blog";
+
+// Maps each service to its in-depth blog guide so the article is not orphaned.
+const guideBySlug: Record<string, string> = {
+  "pool-cleaning": "pool-cleaning-service-pinellas-county",
+  "pool-repair": "pool-repair-pinellas-county",
+};
+
+function relatedGuide(serviceSlug: string) {
+  const postSlug = guideBySlug[serviceSlug];
+  return postSlug ? getPost(postSlug) : undefined;
+}
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -46,6 +58,7 @@ export default async function ServiceDetailPage({
   if (!service) notFound();
 
   const others = services.filter((s) => s.slug !== service.slug);
+  const guide = relatedGuide(service.slug);
   const crumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
@@ -102,6 +115,18 @@ export default async function ServiceDetailPage({
                 </li>
               ))}
             </ul>
+            {guide && (
+              <p className="mt-6 text-navy-800/80">
+                Want to learn more first? Read our guide:{" "}
+                <Link
+                  href={`/blog/${guide.slug}`}
+                  className="font-semibold text-ocean-600 underline decoration-aqua-400 underline-offset-2 hover:text-aqua-500"
+                >
+                  {guide.title}
+                </Link>
+                .
+              </p>
+            )}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
