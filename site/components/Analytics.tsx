@@ -5,7 +5,7 @@ import Script from "next/script";
  * default, and can be overridden with NEXT_PUBLIC_GA_ID in the environment.
  */
 export default function Analytics() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-V5KEETM9KE";
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-RD3YGDXCV8";
   if (!gaId) return null;
 
   return (
