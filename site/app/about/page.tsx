@@ -66,9 +66,17 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 leading-relaxed text-navy-800/75">
               Our goal is simple. A clean, healthy pool should be effortless for the
-              people who own it. We handle the cleaning, the chemistry, and the
-              equipment so you can spend more time enjoying the water and less time
-              worrying about upkeep.
+              people who own it. We handle the cleaning, the{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Water_chlorination"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-ocean-600 underline decoration-aqua-400 underline-offset-2 hover:text-aqua-500"
+              >
+                chemistry
+              </a>
+              , and the equipment so you can spend more time enjoying the water and
+              less time worrying about upkeep.
             </p>
             <blockquote className="mt-6 rounded-2xl border-l-4 border-aqua-500 bg-aqua-50/60 p-5 text-navy-900">
               &ldquo;A clean, healthy pool should be effortless for the people who own

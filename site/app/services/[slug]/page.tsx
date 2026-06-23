@@ -78,7 +78,10 @@ export default async function ServiceDetailPage({
           <div>
             <Eyebrow>{service.title}</Eyebrow>
             <Heading>What is included</Heading>
-            <p className="mt-5 text-lg leading-relaxed text-navy-800/85">{service.blurb}</p>
+            <p
+              className="mt-5 text-lg leading-relaxed text-navy-800/85 [&_a]:font-semibold [&_a]:text-ocean-600 [&_a]:underline [&_a]:decoration-aqua-400 [&_a]:underline-offset-2 hover:[&_a]:text-aqua-500"
+              dangerouslySetInnerHTML={{ __html: service.blurb }}
+            />
             <p className="mt-4 text-navy-800/75">
               Available to homeowners and businesses{" "}
               <Link href="/service-areas" className="font-semibold text-ocean-600 hover:text-aqua-500">
@@ -92,7 +95,10 @@ export default async function ServiceDetailPage({
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua-50 text-ocean-600">
                     <CheckIcon className="h-3.5 w-3.5" />
                   </span>
-                  {f}
+                  <span
+                    className="[&_a]:font-semibold [&_a]:text-ocean-600 [&_a]:underline [&_a]:decoration-aqua-400 [&_a]:underline-offset-2 hover:[&_a]:text-aqua-500"
+                    dangerouslySetInnerHTML={{ __html: f }}
+                  />
                 </li>
               ))}
             </ul>

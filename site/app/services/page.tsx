@@ -42,8 +42,16 @@ export default function ServicesPage() {
           <Eyebrow>What We Do</Eyebrow>
           <Heading>One team for everything your pool needs</Heading>
           <p className="mt-4 text-navy-800/80">
-            From regular maintenance to expert repairs, we keep your pool clean,
-            safe, and enjoyable year round. Choose a service below to learn more.
+            From regular maintenance to expert repairs, we keep your pool clean,{" "}
+            <a
+              href="https://www.cdc.gov/healthy-swimming/about/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-ocean-600 underline decoration-aqua-400 underline-offset-2 hover:text-aqua-500"
+            >
+              safe
+            </a>
+            , and enjoyable year round. Choose a service below to learn more.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
