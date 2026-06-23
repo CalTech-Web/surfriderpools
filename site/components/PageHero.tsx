@@ -58,7 +58,7 @@ export default function PageHero({
 
 export function Prose({ children }: { children: ReactNode }) {
   return (
-    <div className="space-y-5 text-lg leading-relaxed text-navy-800/90 [&_a]:font-semibold [&_a]:text-ocean-600 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:text-navy-900 [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:text-navy-900">
+    <div className="space-y-5 text-lg leading-relaxed text-navy-800/90 [&_a]:font-semibold [&_a]:text-ocean-600 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:text-navy-900 [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:text-navy-900 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:marker:text-ocean-600 [&_li]:pl-1 [&_strong]:text-navy-900">
       {children}
     </div>
   );

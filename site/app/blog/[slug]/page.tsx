@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import PageHero, { Prose } from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbSchema, articleSchema } from "@/lib/schema";
+import { breadcrumbSchema, articleSchema, faqSchema } from "@/lib/schema";
 import { posts, getPost } from "@/lib/blog";
 
 export function generateStaticParams() {
@@ -20,9 +20,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
+  const keywords = [
+    post.focusKeyword,
+    post.secondaryKeyword,
+    post.longTailKeyword,
+  ].filter(Boolean) as string[];
   return {
     title: post.title,
     description: post.excerpt,
+    ...(keywords.length ? { keywords } : {}),
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
@@ -51,7 +57,13 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <JsonLd data={[breadcrumbSchema(crumbs), articleSchema(post)]} />
+      <JsonLd
+        data={[
+          breadcrumbSchema(crumbs),
+          articleSchema(post),
+          ...(post.faqs && post.faqs.length > 0 ? [faqSchema(post.faqs)] : []),
+        ]}
+      />
       <PageHero title={post.title} crumbs={crumbs} />
 
       <article className="py-16 md:py-20">
@@ -75,11 +87,45 @@ export default async function BlogPostPage({
           </div>
           <div className="mt-10">
             <Prose>
-              {post.paragraphs.map((p, i) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
-              ))}
+              {post.body ? (
+                <div className="space-y-5" dangerouslySetInnerHTML={{ __html: post.body }} />
+              ) : (
+                post.paragraphs?.map((p, i) => (
+                  <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                ))
+              )}
             </Prose>
           </div>
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mt-14">
+              <h2 className="font-display text-2xl font-bold text-navy-900">
+                Frequently asked questions
+              </h2>
+              <div className="mt-6 space-y-4">
+                {post.faqs.map((f) => (
+                  <details
+                    key={f.q}
+                    className="group rounded-2xl border border-aqua-50 bg-white p-5 shadow-sm"
+                  >
+                    <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-lg font-semibold text-navy-900 marker:content-['']">
+                      {f.q}
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        aria-hidden="true"
+                        className="shrink-0 text-ocean-600 transition-transform group-open:rotate-180"
+                      >
+                        <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </summary>
+                    <p className="mt-3 leading-relaxed text-navy-800/85">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
           {post.resources && post.resources.length > 0 && (
             <div className="mt-12 rounded-2xl border border-aqua-50 bg-aqua-50/50 p-6 md:p-8">
               <h2 className="font-display text-xl font-bold text-navy-900">Helpful resources</h2>
