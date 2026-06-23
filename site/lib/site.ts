@@ -5,7 +5,7 @@ export const site = {
   name: "Surfrider Pool Service",
   shortName: "Surfrider Pools",
   domain: "surfriderpools.com",
-  url: "https://surfriderpools.vercel.app",
+  url: "https://www.surfriderpools.com",
   formKey: "surfriderpools.com",
   tagline: "Your trusted partner for professional pool care in Pinellas County.",
   description:
